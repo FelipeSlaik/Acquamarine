@@ -75,7 +75,7 @@ header {
     text-align: center;
 }
 
-h1{
+.newsletters h1{
     background: var(--gradient-color); 
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
@@ -84,12 +84,12 @@ h1{
     font-weight: 700;
 }
 
-h3{
+.newsletters h3{
     font-size: 13px;
     font-weight: 600;
 }
 
-p{
+.newsletters p{
     font-size: 12px;
     font-weight: 400;
     text-align: center;
