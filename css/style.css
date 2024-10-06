@@ -12,6 +12,9 @@
     --acqua-blue: #327AFF;
     --steel-blue: #34495e;
     --gradient-color: linear-gradient(to right, #34495E, #327AFF);
+    --gradient-color-hover: linear-gradient(to right, #6096bc, #6db0db);
+    --border-color: #bbbbbb;
+    --text-placeholder:#606060;
 }
 
 * {
@@ -73,6 +76,8 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 16px;
+    padding: 0 16px;
 }
 
 .newsletters h1{
@@ -93,4 +98,38 @@ header {
     font-size: 12px;
     font-weight: 400;
     text-align: center;
+    
+}
+
+.user-email{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 13px;
+}
+
+.user-email .btn, input{
+    width: 316px;
+    height: 44px;
+    border-radius: 54px;
+    border: solid 1px var(--border-color);
+}
+
+input{
+    padding: 13px 17px;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-placeholder);
+}
+
+.btn{
+    font-size: 14px;
+    font-weight: 500;
+    background: var(--gradient-color);
+    color: var(--color-white);
+}
+
+.btn:hover{
+    background: var(--gradient-color-hover);
+    cursor: pointer;
 }
