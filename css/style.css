@@ -1,6 +1,8 @@
 /* 
     1- HEADER
-    2- SECTION
+    2- SECTION EMAIL
+    3- SECTION PROGRESS
+    4- MEDIA QUERY
 */
 
 
@@ -14,7 +16,7 @@
     --gradient-color: linear-gradient(to right, #34495E, #327AFF);
     --gradient-color-hover: linear-gradient(to right, #6096bc, #6db0db);
     --border-color: #bbbbbb;
-    --text-placeholder:#606060;
+    --text-placeholder: #606060;
 }
 
 * {
@@ -28,19 +30,19 @@ body {
     padding: 0;
 }
 
-    /* 1- HEADER */
+/* 1- HEADER */
 
 header {
     width: 100%;
     height: 100vh;
-    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/img/predio.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/predio.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 
-#time{
+#time {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,25 +52,28 @@ header {
     height: 100%;
 }
 
-.number{
+.number {
     font-size: 32px;
+    line-height: 48px;
     font-weight: 700;
     color: var(--color-white);
     text-shadow: var(--black) 0.1em 0.1em 0.2em;
     letter-spacing: 1.5px;
 }
 
-.description{
+.description {
     font-size: 15px;
+    line-height: 15px;
     font-weight: 800;
     color: var(--color-white);
     text-shadow: var(--black) 0.1em 0.2em 0.2em;
     letter-spacing: 1.5px;
 }
 
-    /* 2- SECTION */
-    
-.newsletters{
+/* 2- SECTION EMAIL */
+
+.newsletters {
+    background-color: var(--light-gray);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -80,56 +85,174 @@ header {
     padding: 0 16px;
 }
 
-.newsletters h1{
-    background: var(--gradient-color); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    background-clip: text; 
+.newsletters h1 {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 38px;
+    line-height: 57px;
     font-weight: 700;
+    width: 100%;
 }
 
-.newsletters h3{
+.newsletters h3 {
     font-size: 13px;
     font-weight: 600;
+    line-height: 21px;
+    font-style: italic;
 }
 
-.newsletters p{
+.newsletters p {
     font-size: 12px;
     font-weight: 400;
+    line-height: 18px;
     text-align: center;
-    
+
 }
 
-.user-email{
+.user-email {
+    max-width: 744px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 13px;
 }
 
-.user-email .btn, input{
-    width: 316px;
-    height: 44px;
+input {
+    padding: 13px 17px;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-placeholder);
+    max-width: 350px;
+    width: 100%;
+    height: 52px;
     border-radius: 54px;
     border: solid 1px var(--border-color);
 }
 
-input{
-    padding: 13px 17px;
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--text-placeholder);
+input:focus {
+    outline: none;
 }
 
-.btn{
+.btn {
     font-size: 14px;
+    line-height: 21px;
     font-weight: 500;
     background: var(--gradient-color);
     color: var(--color-white);
+    max-width: 350px;
+    width: 100%;
+    height: 52px;
+    border-radius: 54px;
+    border: solid 1px var(--border-color);
 }
 
-.btn:hover{
+.btn:hover {
     background: var(--gradient-color-hover);
     cursor: pointer;
+}
+
+#message{
+    display: none;
+}
+
+
+/* 3- SECTION PROGRESS */
+.progress {
+    height: 100vh;
+    text-align: center;
+    margin-top: 3rem;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.9rem;
+}
+
+.title-progress h1 {
+    font-size: 1.8rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+}
+
+.title-progress h3 {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    font-weight: 400;
+}
+
+.project-progress {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.img-progress {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.img-progress:hover{
+    transform: scale(0.9);
+}
+
+/* 4- MEDIA QUERY */
+
+@media (max-width: 480px)  {
+    #time {
+        padding: 6px;
+        
+    }
+    .number{
+        font-size: 20px;
+    }
+    .description{
+        font-size: 10px;
+    }
+    .newsletters h1{
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 768px) {
+    #time {
+        padding: 50px;
+    }
+
+    .progress {
+        height: 100%;
+
+    }
+
+    .project-progress {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    header {
+        width: 50%;
+    }
+
+    .newsletters {
+        width: 50%;
+    }
+
+    .progress {
+        width: 100%;
+        margin-top: 2rem;
+        padding: 30px;
+    }
 }

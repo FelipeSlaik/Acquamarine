@@ -34,4 +34,29 @@ function addZero(number){
 //Atualizar crônometro a cada 1s
 setInterval(startTimer, 1000);
 
+// validação do email
+                //Previne envio do email
+    document.querySelector('.user-email').addEventListener('submit', function(event){
+        event.preventDefault();
+    
 
+    const emailInput = document.getElementById('email').value;
+    const message = document.getElementById('message');
+
+    if(validateEmail(emailInput)){
+        message.textContent = 'E-mail enviado com sucesso!'
+        message.style.color = '#008000';
+    }
+    else{
+        message.textContent = 'E-mail inválido. Verifique e tente novamente.'
+        message.style.color = '#FF0000';
+    }
+
+    message.style.display = 'block';
+   
+});
+ 
+function validateEmail(email){
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
