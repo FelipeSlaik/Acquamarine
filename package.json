@@ -1,5 +1,18 @@
 {
   "dependencies": {
     "dotenv": "^16.4.5"
-  }
+  },
+  "name": "bom-de-morar",
+  "version": "1.0.0",
+  "description": "## Bem vindo! 👋",
+  "main": "index.js",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
