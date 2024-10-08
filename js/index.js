@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 //45 dias em milissegundos
 const timeInterval = 45 * 24 * 60 * 60 * 1000;
 
@@ -67,10 +70,10 @@ function validateEmail(email) {
 // enviar Email 
 
 async function sendEmail(emailInput) {
-    const url = 'https://api.emailjs.com/api/v1.0/email/send';
+    const url = process.env.API_URL;
     const serviceID = process.env.SERVICE_ID;
     const templateID = process.env.TEMPLATE_ID;
-    const userID = process.env.USER_ID;
+    const userID = process.env.USER_ID; 
 
     const params = {
         email: emailInput,
