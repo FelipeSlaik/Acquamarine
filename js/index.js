@@ -68,9 +68,9 @@ function validateEmail(email) {
 
 async function sendEmail(emailInput) {
     const url = 'https://api.emailjs.com/api/v1.0/email/send';
-    const serviceID = 'acquamarineMessage';
-    const templateID = 'template_fo5srlo';
-    const userID = 'KtmZdB88A46c7S1YI';
+    const serviceID = process.env.SERVICE_ID;
+    const templateID = process.env.TEMPLATE_ID;
+    const userID = process.env.USER_ID;
 
     const params = {
         email: emailInput,
