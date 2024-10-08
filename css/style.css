@@ -216,6 +216,9 @@ input:focus {
     .newsletters h1{
         font-size: 26px;
     }
+    .progress{
+        height: 100%;
+    }
 }
 
 @media (min-width: 768px) {
